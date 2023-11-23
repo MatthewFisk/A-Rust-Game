@@ -37,9 +37,6 @@ struct Game_Board<'a> {
 fn main() {
     let mut game_board: [[Tile; 30]; 20] = [[Tile {icon: ',', color: "green", visible: true}; 30]; 20];
 
-    let test = Game_Board {
-        board: [[Tile {icon: '.', color: "blue", visible: true}; 30]; 20]
-    };
     let mut player = Entity {
         tile: Tile {icon: '@', color: "white", visible: true},
         health: 10,
@@ -55,14 +52,6 @@ fn main() {
             print!(" {} ", String::from(b.icon).color(b.color));
         }
     }
-
-    for a in test.board {
-        println!();
-        for b in a {
-            print!(" {} ", String::from(b.icon).color(b.color));
-        }
-    }
-
 
     let stdout = Term::buffered_stdout();
     'game_loop: loop {
